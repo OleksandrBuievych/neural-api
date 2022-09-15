@@ -1,0 +1,83 @@
+#include <iostream>
+
+
+class Triangle {
+	float a, b, c;
+	int ka, kb, kc;
+public:
+    float P,p, S;
+	Triangle Init(float a, float b, float c, int ka, int kb, int kc);
+	Triangle Read();
+	void Display();
+	char toString();
+	float Perymetr();
+	float Ploscha();
+	
+};
+
+
+using namespace std;
+
+Triangle Triangle::Init(float va, float vb, float vc, int vka, int vkb, int vkc)
+{
+	Triangle tmp;
+	tmp.a = va;
+	tmp.b = vb;
+	tmp.c = vc;
+	tmp.ka = vka;
+	tmp.kb = vkb;
+	tmp.kc = vkc;
+	return tmp;
+};
+
+Triangle Triangle::Read()
+{
+	cout << "Enter your a = ";
+	cin >> a;
+	cout << "Enter your b = ";
+	cin >> b;
+	cout << "Enter your c = ";
+	cin >> c;
+	cout << "Enter your kyt A = ";
+	cin >> ka;
+	cout << "Enter your kyt B = ";
+	cin >> kb;
+	cout << "Enter your kyt C = ";
+	cin >> kc;
+	return Triangle();
+};
+
+void Triangle::Display()
+{
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "c = " << c << endl;
+	cout << "kyt A = " << ka << endl;
+	cout << "kyt B = " << kb << endl;
+	cout << "kyt C = " << kc << endl;
+	cout << "Perymetr = " << P << endl;
+	cout << "S = " << S << endl;
+
+};
+
+float Triangle::Perymetr(){
+    P = a+b+c;
+    return P;
+};
+
+float Triangle::Ploscha(){
+    p = P/2;
+  S = sqrt(p*(p-a)*(p-b)*(p-c));
+  return S;
+};
+
+int main()
+{
+	Triangle abc;
+//	abc.Init(2, 2, 4, 80, 60, 60);
+abc.Read();
+abc.Perymetr();
+abc.Ploscha();
+	abc.Display();
+	return 0;
+};
